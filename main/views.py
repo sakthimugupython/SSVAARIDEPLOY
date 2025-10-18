@@ -103,6 +103,9 @@ SSV AARI WORK Team
             messages.error(request, 'There was an error sending your message. Please try again or contact us directly.')
             return redirect('contact')
 
+    # Handle GET request - return the contact form
+    return render(request, 'contact.html')
+
 def about(request):
     # Fetch dynamic content for about page
     hero = AboutHeroSection.objects.filter(is_active=True).first()
